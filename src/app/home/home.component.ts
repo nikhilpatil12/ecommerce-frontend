@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
     // this.route.queryParams.subscribe(params => {
     //   this.name = params['name'];
     // });
-    this.http.get<any>('http://localhost:8000/api/products?sortBy=&order=desc&limit=8').subscribe({
+    this.http.get<any>('https://ecommerce-ns.herokuapp.com/api/products?sortBy=&order=desc&limit=8').subscribe({
       next: data => {
         this.products = data;
         console.log(this.products);
@@ -29,7 +29,7 @@ export class HomeComponent implements OnInit {
         console.error('There was an error!', error);
       }
     });
-    this.http.get<any>('http://localhost:8000/api/products?sortBy=sold&order=desc&limit=8').subscribe({
+    this.http.get<any>('https://ecommerce-ns.herokuapp.com/api/products?sortBy=sold&order=desc&limit=8').subscribe({
       next: data => {
         this.productssold = data;
         console.log(this.productssold);

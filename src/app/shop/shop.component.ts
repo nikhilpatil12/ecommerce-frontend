@@ -21,7 +21,7 @@ export class ShopComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.http.get<any>('http://localhost:8000/api/categories').subscribe({
+    this.http.get<any>('https://ecommerce-ns.herokuapp.com/api/categories').subscribe({
     next: data => {
       this.categories = data;
       console.log(this.categories);
@@ -33,7 +33,7 @@ export class ShopComponent implements OnInit {
     }
   });
 
-  this.http.get<any>('http://localhost:8000/api/products?sortBy=&order=desc&limit=8').subscribe({
+  this.http.get<any>('https://ecommerce-ns.herokuapp.com/api/products?sortBy=&order=desc&limit=8').subscribe({
     next: data => {
       this.products = data;
       console.log(this.products);
