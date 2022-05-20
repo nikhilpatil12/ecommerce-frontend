@@ -1,0 +1,62 @@
+<br>
+<br>
+<h1>
+    New Arrivals
+</h1>
+
+<div >
+    <mat-grid-list cols="5" rowHeight="1:2.2">
+        <mat-grid-tile *ngFor="let product of products">
+        <div class="card">
+                <div class="card-header name">{{ product.name }}</div>
+                <div class="card-body">
+                    <div class="product-img-div" style="min-height: 300px;">
+                        <img class="product-img" src="http://localhost:8000/api/product/photo/{{product._id}}" alt="{{ product.name }}" class="mb-3" style="max-height: 300px; max-width: 100%;">
+                    </div>
+                    <p class="card-description">{{ product.description }}</p>
+                    <p class="card-price"> ${{ product.price }}</p>
+                    <p class="card-category">Category: {{ product.category.name }}</p>
+                    <span class="card-badge-pill">{{ product.quantity!=0?"In Stock":"Out of Stock" }} </span><br>
+                    <div style="text-align: center; margin-top: 20px">
+                        <a href="/product/628568e73993b839656be24b" style="margin: 20px;">
+                            <button mat-raised-button color="primary">View Product</button>
+                        </a>
+                        <button mat-raised-button color="accent">Add to Cart</button>
+
+                    </div>
+                </div>
+        </div>
+        </mat-grid-tile>
+    </mat-grid-list>
+    
+</div>
+
+<h1>Best Sellers</h1>
+
+<div >
+    <mat-grid-list cols="5" rowHeight="1:2.2">
+        <mat-grid-tile *ngFor="let product of productssold">
+        <div class="card">
+                <div class="card-header name">{{ product.name }}</div>
+                <div class="card-body">
+                    <div class="product-img-div" style="min-height: 300px;">
+                        <img class="product-img" src="http://localhost:8000/api/product/photo/{{product._id}}" alt="{{ product.name }}" class="mb-3" style="max-height: 300px; max-width: 100%;">
+                    </div>
+                    <p class="card-description">{{ product.description }}</p>
+                    <p class="card-price"> ${{ product.price }}</p>
+                    <p class="card-category">Category: {{ product.category.name }}</p>
+                    <span class="card-badge-pill">{{ product.quantity!=0?"In Stock":"Out of Stock" }} </span><br>
+                    <div style="text-align: center; margin-top: 20px">
+                        <a href="/product/628568e73993b839656be24b" style="margin: 20px;">
+                            <button mat-raised-button color="primary">View Product</button>
+                            <!-- <button class="btn btn-outline-primary mt-2 mb-2 mr-2"</button> -->
+                        </a>
+                        <button mat-raised-button color="accent">Add to Cart</button>
+
+                    </div>
+                </div>
+        </div>
+        </mat-grid-tile>
+    </mat-grid-list>
+    
+</div>

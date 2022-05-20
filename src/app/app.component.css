@@ -1,0 +1,35 @@
+.spacer {
+    flex: 1 1 auto;
+  }
+
+.icon{
+    background-color: rgba(0, 0, 0, 0);
+    border: 0px;
+    color: white;
+}
+.home-icon{
+    color: rgb(0, 0, 0);
+}
+.search-icon{
+    background-color: rgba(0, 0, 0, 0);
+    border: 0px;
+}
+.clear-icon{
+    background-color: rgba(0, 0, 0, 0);
+    border: 0px;
+}
+a{
+    color: white;
+    text-decoration: none;
+}
+.small-spacer{
+    width: 30px;
+}
+.active{
+    color: red;
+}
+.search-field{
+    width: 350px;
+    background-color: rgba(1, 136, 255, 0);
+}
+

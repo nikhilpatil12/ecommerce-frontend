@@ -1,0 +1,55 @@
+
+<div class="flex-container">
+    <div class="flex-child" style="width: 25%;">
+        <div style="border: 1px solid rgb(218, 218, 218); margin: 30px; border-radius: 9px; padding: 20px;">
+            <h1>Filter by Categories</h1>
+            <div *ngFor="let category of categories; let i = index">
+                <section class="category-section">
+                    <mat-checkbox  color="primary" class="categories" [(ngModel)]="checkboxes[i]" style="margin-top: 5px;">{{category.name}}</mat-checkbox>
+                </section>
+                <!-- <input type="checkbox" class="form-check-input" value="-1"> -->
+                <!-- <label class="form-check-label">{{category.name}}</label> -->
+            </div>
+            <br><br><br>
+            <label id="price-radio-group-label"><h1>Filter by Price</h1></label>
+            <div>
+                <mat-radio-group aria-labelledby="price-radio-group-label" aria-label="Select an option" [(ngModel)]="pricefilter" class="price-radio-group">
+                    <mat-radio-button class="price-radio-button"  *ngFor="let price of prices" value={{price}}>{{price}}</mat-radio-button> 
+                </mat-radio-group>
+                <!-- <div>Your filter is: {{pricefilter}}</div> -->
+            </div>
+        </div>
+    </div>
+    <div class="flex-child"  style="width: 75%;flex-grow: 4;">
+        <div style="border: 1px solid rgb(218, 218, 218); margin: 30px; border-radius: 9px; padding: 20px;">
+        <h1>Products</h1>
+        <mat-grid-list cols="4" rowHeight="1:2.5">
+            <mat-grid-tile *ngFor="let product of products">
+            <div class="card">
+                    <div class="card-header name">{{ product.name }}</div>
+                    <div class="card-body">
+                        <div class="product-img-div" style="min-height: 300px;">
+                            <img class="product-img" src="http://localhost:8000/api/product/photo/{{product._id}}" alt="{{ product.name }}" class="mb-3" style="max-height: 300px; max-width: 100%;">
+                        </div>
+                        <p class="card-description">{{ product.description }}</p>
+                        <p class="card-price"> ${{ product.price }}</p>
+                        <p class="card-category">Category: {{ product.category.name }}</p>
+                        <span class="card-badge-pill">{{ product.quantity!=0?"In Stock":"Out of Stock" }} </span><br>
+                        <div style="text-align: center; margin-top: 20px">
+                            <a href="/product/628568e73993b839656be24b" style="margin: 20px;">
+                                <button mat-raised-button color="primary">View Product</button>
+                                <!-- <button class="btn btn-outline-primary mt-2 mb-2 mr-2"</button> -->
+                            </a>
+                            <button mat-stroked-button color="accent">Add to Cart</button>
+    
+                        </div>
+                    </div>
+            </div>
+            </mat-grid-tile>
+            <!-- <div *ngFor="let product of products" class="card" >
+                
+            </div> -->
+        </mat-grid-list>
+        </div>
+    </div>
+</div>

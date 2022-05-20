@@ -1,0 +1,35 @@
+<mat-toolbar color="primary">
+  <button routerLink="/home" routerLinkActive="active" class="icon home-icon" aria-label="Home Button">
+    <mat-icon>home</mat-icon>
+  </button>
+  <a routerLink="/home" routerLinkActive="active" class="home-icon"><span>Home</span></a>
+  <span class="small-spacer"></span>
+  <a routerLink="/shop" routerLinkActive="active"><span>Shop</span></a>
+  <span class="small-spacer"></span>
+  <a routerLink="/admin-dash" routerLinkActive="active"><span>Admin Dashboard</span></a>
+  <span class="small-spacer"></span>
+  <span class="small-spacer"></span>
+  <span class="small-spacer"></span>
+
+  <mat-form-field class="search-field" appearance="fill">
+    <!-- <mat-label>Clearable Search</mat-label> -->
+    <input matInput type="search" [(ngModel)]="value" aria-label="Search">
+    <button *ngIf="value" matSuffix mat-icon-button class="icon clear-icon" aria-label="Clear" (click)="value=''">
+      <mat-icon>close</mat-icon>
+    </button>
+    <!-- <span class="small-spacer"></span> -->
+  </mat-form-field>
+    <button routerLink="/search" mat-icon-button class="icon search-icon" aria-label="Search button">
+      <mat-icon>search</mat-icon>
+    </button>
+
+  <span class="spacer"></span>
+  <button routerLink="/cart" routerLinkActive="active" mat-icon-button class="icon cart-icon" aria-label="Shopping Cart">
+    <mat-icon>shopping_cart</mat-icon>
+  </button>
+  <button routerLink="/logout" mat-icon-button class="icon logout-icon" aria-label="Logout button">
+    <mat-icon>logout</mat-icon>
+  </button>
+</mat-toolbar>
+
+<router-outlet></router-outlet>
